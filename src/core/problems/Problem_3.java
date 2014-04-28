@@ -1,7 +1,6 @@
 package core.problems;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import core.utils.IntegerProblem;
@@ -24,13 +23,13 @@ public class Problem_3 extends IntegerProblem
 
     protected int getActual()
     {
-        int temp = 0;
+        List<Integer> factors = getFactors(600851475143L);
 
-        Iterator<Integer> itr = getFactors(600851475143L).iterator();
+        int temp, i;
 
-        while (itr.hasNext())
+        for (i = factors.size(), temp = 0; i > 0; i--)
         {
-            if (isPrime(temp = itr.next()))
+            if (isPrime(temp = factors.get(i).intValue()))
             {
                 break;
             }
