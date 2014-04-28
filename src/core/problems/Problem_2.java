@@ -10,15 +10,25 @@ import core.utils.IntegerProblem;
  */
 public class Problem_2 extends IntegerProblem
 {
-    public Problem_2()
+    private int getActual(int max, int sum, int term1, int term2)
     {
-        super(Problem_2.class.getName());
+        int current = term1 + term2;
+
+        if (current > max)
+        {
+            return sum;
+        }
+        else if (current % 2 == 0)
+        {
+            sum += current;
+        }
+
+        return getActual(max, sum, term2, current);
     }
 
     protected int getActual()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        return getActual(4000000, 0, 0, 1);
     }
 
     protected int getExpected()

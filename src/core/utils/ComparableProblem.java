@@ -4,9 +4,9 @@ public abstract class ComparableProblem<T> implements Problem
 {
     final protected String m_sName;
 
-    public ComparableProblem(String name)
+    public ComparableProblem()
     {
-        m_sName = name;
+        m_sName = this.getClass().getName();
     }
 
     protected abstract T generateActual();

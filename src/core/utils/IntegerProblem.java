@@ -2,11 +2,6 @@ package core.utils;
 
 public abstract class IntegerProblem extends ComparableProblem<Integer>
 {
-    public IntegerProblem(String name)
-    {
-        super(name);
-    }
-
     protected abstract int getActual();
 
     protected abstract int getExpected();
